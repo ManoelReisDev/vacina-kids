@@ -202,3 +202,13 @@ Lista campanhas disponíveis com informações de período e público-alvo.
 - Não há backend conectado neste repositório
 - Os assets visuais ficam em `public/`
 
+## Layout
+- Rota de Crianças
+<img width="1258" height="921" alt="Crianças" src="https://github.com/user-attachments/assets/490f291d-279f-47fb-98c1-32ad9dbe47e6" />
+
+- Rota de Carteira
+<img width="1258" height="921" alt="Carteira" src="https://github.com/user-attachments/assets/83ca568a-8d0d-49da-8c11-31dc1514e4f6" />
+
+- Rota de Campanhas
+<img width="1258" height="921" alt="campanhas" src="https://github.com/user-attachments/assets/807976f8-4e56-47b3-ab28-fc97170fe5dd" />
+
