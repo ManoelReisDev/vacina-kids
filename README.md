@@ -2,6 +2,8 @@
 
 Aplicação web em Angular para acompanhar a caderneta de vacinação infantil. A interface mostra a criança ativa, um resumo do status vacinal, a carteira com as doses previstas e aplicadas, além de campanhas em andamento.
 
+<img width="1130" height="816" alt="image" src="https://github.com/user-attachments/assets/a08724da-53a5-452c-85fb-6d88155b7747" />
+
 ## Visão Geral
 
 O software foi pensado como um painel simples para:
