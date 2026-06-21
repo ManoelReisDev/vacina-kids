@@ -201,4 +201,4 @@ Lista campanhas disponíveis com informações de período e público-alvo.
 - A aplicação usa dados mockados em memória
 - Não há backend conectado neste repositório
 - Os assets visuais ficam em `public/`
-# vacina-kids
+
