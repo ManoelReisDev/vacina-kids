@@ -1,0 +1,17 @@
+<main class="app-shell">
+  <app-header
+    [children]="vaccineService.children()"
+    [selectedChildId]="vaccineService.selectedChild().id"
+    (selectedChildIdChange)="vaccineService.selectChild($event)"
+  />
+
+  <app-navigation-tabs />
+
+  <app-child-summary
+    [child]="vaccineService.selectedChild()"
+    [ageInMonths]="vaccineService.childAge()"
+    [stats]="vaccineService.stats()"
+  />
+
+  <router-outlet />
+</main>

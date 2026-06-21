@@ -1,0 +1,22 @@
+<section class="child-summary">
+  <div>
+    <p class="eyebrow">Acompanhando agora</p>
+    <h2>{{ child.name }}</h2>
+    <p>{{ ageInMonths }} meses de idade</p>
+  </div>
+
+  <div class="status-grid" aria-label="Situacao vacinal">
+    <article class="metric completed">
+      <span>{{ stats.completed }}</span>
+      <p>Aplicadas</p>
+    </article>
+    <article class="metric pending">
+      <span>{{ stats.pending }}</span>
+      <p>Pendentes</p>
+    </article>
+    <article class="metric overdue">
+      <span>{{ stats.overdue }}</span>
+      <p>Atrasadas</p>
+    </article>
+  </div>
+</section>

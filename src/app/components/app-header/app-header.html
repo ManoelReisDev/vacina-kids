@@ -1,0 +1,15 @@
+<header class="topbar">
+  <div class="brand">
+    <h1 class="vacina-header-title">Vacina Kids</h1>
+    <img class="brand-icon" src="/syringe.svg" alt="Syringe" aria-hidden="true" />
+  </div>
+
+  <label class="child-picker">
+    <span>Crianca ativa</span>
+    <select [ngModel]="selectedChildId" (ngModelChange)="selectedChildIdChange.emit($event)">
+      <option *ngFor="let child of children; trackBy: trackById" [value]="child.id">
+        {{ child.name }}
+      </option>
+    </select>
+  </label>
+</header>

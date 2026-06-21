@@ -1,0 +1,52 @@
+.children-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.child-card {
+  display: grid;
+  gap: 6px;
+  border: 1px solid rgba(71, 60, 51, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  padding: 16px;
+  text-align: left;
+}
+
+.child-card small {
+  color: #7a6d62;
+  font-weight: 700;
+}
+
+.child-card.active {
+  border-color: #473c33;
+  box-shadow: inset 0 0 0 2px #473c33;
+}
+
+.form-panel {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.form-panel label {
+  display: grid;
+  gap: 6px;
+  color: #6f6259;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.submit-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.submit-action img {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}

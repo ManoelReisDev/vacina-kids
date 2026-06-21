@@ -1,0 +1,45 @@
+<section class="content-grid">
+  <div class="panel">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Proximas acoes</p>
+        <h2>Vacinas previstas</h2>
+      </div>
+      <a class="text-button" routerLink="/carteira">Ver carteira</a>
+    </div>
+
+    <div class="timeline">
+      <article *ngFor="let item of vaccineService.nextVaccines(); trackBy: trackPlan" class="vaccine-row" [class]="item.status">
+        <div>
+          <strong>{{ item.vaccine.name }}</strong>
+          <p>{{ item.vaccine.description }}</p>
+          <small>Prevista para {{ vaccineService.formatDate(item.scheduledDate) }}</small>
+        </div>
+        <span class="badge" [class]="item.status">{{ vaccineService.statusLabel(item.status) }}</span>
+      </article>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Campanhas</p>
+        <h2>Ativas para acompanhar</h2>
+      </div>
+      <a class="text-button" routerLink="/campanhas">Detalhes</a>
+    </div>
+
+    <article
+      *ngFor="let campaign of vaccineService.activeCampaigns(); trackBy: trackCampaign"
+      class="campaign-card"
+      [class.relevant]="campaign.relevant"
+    >
+      <span class="badge" [class.pending]="!campaign.relevant" [class.completed]="campaign.relevant">
+        {{ campaign.relevant ? 'Relevante' : 'Geral' }}
+      </span>
+      <h3>{{ campaign.title }}</h3>
+      <p>{{ campaign.description }}</p>
+      <small>{{ vaccineService.formatDate(campaign.startDate) }} ate {{ vaccineService.formatDate(campaign.endDate) }}</small>
+    </article>
+  </div>
+</section>

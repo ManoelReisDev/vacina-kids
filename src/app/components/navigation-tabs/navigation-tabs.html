@@ -1,0 +1,10 @@
+<nav class="tabs" aria-label="Navegacao principal">
+  <a
+    *ngFor="let item of items"
+    [routerLink]="item.path"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    {{ item.label }}
+  </a>
+</nav>

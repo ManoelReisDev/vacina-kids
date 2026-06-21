@@ -1,0 +1,32 @@
+<section class="panel">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Saude publica</p>
+      <h2>Campanhas ativas</h2>
+    </div>
+  </div>
+
+  <div class="campaign-grid">
+    <article
+      *ngFor="let campaign of vaccineService.activeCampaigns(); trackBy: trackCampaign"
+      class="campaign-card large"
+      [class.relevant]="campaign.relevant"
+    >
+      <span class="badge" [class.completed]="campaign.relevant" [class.pending]="!campaign.relevant">
+        {{ campaign.relevant ? 'Indicada para o perfil' : 'Campanha geral' }}
+      </span>
+      <h3>{{ campaign.title }}</h3>
+      <p>{{ campaign.description }}</p>
+      <dl>
+        <div>
+          <dt>Publico</dt>
+          <dd>{{ campaign.targetAudience }}</dd>
+        </div>
+        <div>
+          <dt>Periodo</dt>
+          <dd>{{ vaccineService.formatDate(campaign.startDate) }} ate {{ vaccineService.formatDate(campaign.endDate) }}</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+<section class="content-grid">
+  <div class="panel">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Familia</p>
+        <h2>Criancas cadastradas</h2>
+      </div>
+    </div>
+
+    <div class="children-list">
+      <button
+        type="button"
+        *ngFor="let child of vaccineService.children(); trackBy: trackById"
+        class="child-card"
+        [class.active]="vaccineService.selectedChild().id === child.id"
+        (click)="vaccineService.selectChild(child.id)"
+      >
+        <strong>{{ child.name }}</strong>
+        <span>{{ vaccineService.getAgeInMonths(child.birthDate) }} meses</span>
+        <small>Nascimento: {{ vaccineService.formatDate(child.birthDate) }}</small>
+      </button>
+    </div>
+  </div>
+
+  <form class="panel form-panel" novalidate (ngSubmit)="addChild()">
+    <div>
+      <p class="eyebrow">Novo cadastro</p>
+      <h2>Adicionar crianca</h2>
+    </div>
+
+    <label>
+      Nome
+      <input
+        name="name"
+        required
+        [(ngModel)]="vaccineService.newChild.name"
+        (ngModelChange)="clearFormError()"
+        placeholder="Ex.: Maria"
+      />
+    </label>
+    <label>
+      Data de nascimento
+      <input
+        name="birthDate"
+        type="date"
+        required
+        [(ngModel)]="vaccineService.newChild.birthDate"
+        (ngModelChange)="clearFormError()"
+      />
+    </label>
+    <label>
+      Genero
+      <select name="gender" [(ngModel)]="vaccineService.newChild.gender" (ngModelChange)="clearFormError()">
+        <option value="">Nao informar</option>
+        <option>Feminino</option>
+        <option>Masculino</option>
+        <option>Outro</option>
+      </select>
+    </label>
+
+    <button type="submit" class="primary-action submit-action">
+      <span>Cadastrar</span>
+      <img src="/add.svg" alt="" aria-hidden="true" />
+    </button>
+
+    <p *ngIf="formError()" class="form-error" role="alert" aria-live="polite">
+      {{ formError() }}
+    </p>
+  </form>
+</section>

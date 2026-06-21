@@ -1,0 +1,48 @@
+<section class="panel">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Historico individual</p>
+      <h2>Carteira vacinal de {{ vaccineService.selectedChild().name }}</h2>
+    </div>
+
+    <div class="filter-group" aria-label="Filtros da carteira">
+      <button type="button" [class.active]="vaccineService.walletFilter() === 'all'" (click)="vaccineService.setFilter('all')">Todas</button>
+      <button type="button" [class.active]="vaccineService.walletFilter() === 'completed'" (click)="vaccineService.setFilter('completed')">
+        Aplicadas
+      </button>
+      <button type="button" [class.active]="vaccineService.walletFilter() === 'pending'" (click)="vaccineService.setFilter('pending')">
+        Pendentes
+      </button>
+      <button type="button" [class.active]="vaccineService.walletFilter() === 'overdue'" (click)="vaccineService.setFilter('overdue')">
+        Atrasadas
+      </button>
+    </div>
+  </div>
+
+  <div class="wallet-table">
+    <article *ngFor="let item of vaccineService.filteredWallet(); trackBy: trackPlan" class="wallet-row">
+      <div>
+        <span class="badge" [class]="item.status">{{ vaccineService.statusLabel(item.status) }}</span>
+        <h3>{{ item.vaccine.name }}</h3>
+        <p>{{ item.vaccine.description }}</p>
+      </div>
+      <div>
+        <small>Prevista</small>
+        <strong>{{ vaccineService.formatDate(item.scheduledDate) }}</strong>
+      </div>
+      <div>
+        <small>Aplicacao</small>
+        <strong>{{ item.appliedDate ? vaccineService.formatDate(item.appliedDate) : 'Nao registrada' }}</strong>
+      </div>
+      <button
+        type="button"
+        class="secondary-action register-action"
+        [disabled]="item.status === 'completed'"
+        (click)="vaccineService.markAsApplied(item)"
+      >
+        <span>Registrar</span>
+        <img src="/register.svg" alt="" aria-hidden="true" />
+      </button>
+    </article>
+  </div>
+</section>

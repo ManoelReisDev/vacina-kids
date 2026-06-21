@@ -1,0 +1,44 @@
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.campaign-card {
+  border: 1px solid rgba(71, 60, 51, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  padding: 16px;
+}
+
+.campaign-card.large {
+  display: grid;
+  gap: 10px;
+}
+
+.campaign-card.relevant {
+  border-color: rgba(171, 194, 112, 0.9);
+  background: linear-gradient(180deg, rgba(171, 194, 112, 0.18), #fff 58%);
+}
+
+.campaign-card p {
+  margin-bottom: 8px;
+}
+
+dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+dt {
+  color: #7a6d62;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 2px 0 0;
+  line-height: 1.45;
+}

@@ -1,0 +1,51 @@
+.timeline {
+  display: grid;
+  gap: 12px;
+}
+
+.vaccine-row,
+.campaign-card {
+  border: 1px solid rgba(71, 60, 51, 0.14);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.campaign-card {
+  margin-bottom: 12px;
+}
+
+
+.vaccine-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-left-width: 6px;
+}
+
+.vaccine-row p,
+.campaign-card p {
+  margin-bottom: 8px;
+}
+
+.vaccine-row small,
+.campaign-card small {
+  color: #7a6d62;
+  font-weight: 700;
+}
+
+.campaign-card {
+  padding: 16px;
+}
+
+.campaign-card.relevant {
+  border-color: rgba(171, 194, 112, 0.9);
+  background: linear-gradient(180deg, rgba(171, 194, 112, 0.18), #fff 58%);
+}
+
+@media (max-width: 820px) {
+  .vaccine-row {
+    display: grid;
+  }
+}
